@@ -1,0 +1,28 @@
+.gx{
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.footer {
+    background-color: rgb(247, 237, 225);
+    /* border: 1px solid black; */
+    display: flex;
+    box-shadow: 0 0 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-in1 {
+    display: flex;
+   gap: 30px;
+}
+.mapp {
+    box-shadow: 5px 0 15px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.footer-mini-icon {
+    box-shadow: 10px 10px 15px;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 500%;
+}
+ /* You might wonder how i did it  and YES i did it :D ..... cool right  */

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events of Chosen Type: {% endblock %}
+
+{% block body %}
+
+    <h1 class="eventtext">Events of Chosen Type:<mark> {{ eventType }}</mark></h1>
+    
+    <div class="container">
+        <a class="btn btn-secondary" href="{{ path('app_event_index') }}">Back to All Events</a>
+    </div>
+    
+
+    <div class="container mt-5">
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 gap-5 mx-4 mb-5 ">
+            {% for event in events %}
+            <div class="card box1" style="width: 25rem;"><br>
+                <img src="{{ event.picture }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5><hr>
+                    <p class="card-text">{{ event.address }} </p>
+                    <p class="card-text">{{ event.type }} </p>
+                    <p class="card-text">{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }} .</p><hr>
+                </div>
+                <div style="display: flex;">
+                    <a class="box" href="{{ path('app_event_show', {'id': event.id}) }}">Show</a>
+                    <a class="box" href="{{ path('app_event_edit', {'id': event.id}) }}">Edit</a>
+                    <br>
+                </div>
+                <br>
+            </div>
+            {% else %}
+            <div class="container">
+                No records found
+            </div>
+        </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+{% endblock %}

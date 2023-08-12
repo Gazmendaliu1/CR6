@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+
+{% block body %}
+<div class="event">
+    <img src="picture/events1.jpg" alt=""> 
+</div>
+<hr>
+<h2></h2>
+<!-- Filter buttons made with a tags for event types music films or food events -->
+<div class="divers ">
+    <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-xs-2 mx-5">
+    <div class="divid">
+        <a id="ttt" href="{{ path('app_event_type', {'type': 'Music'}) }}"> <img style="height: 200px;" class="imgsort" src="/picture/music.png" alt=""></a>
+        <div>
+        <h1 class="ttxt">Music</h1>
+        </div>
+    </div>
+    <div class="divid">
+        <a  id="ttt" href="{{ path('app_event_type', {'type': 'Film'}) }}"> <img style="height: 200px;"  class="imgsort" src="/picture/movie.jpg" alt=""></a>
+        <h1 class="ttxt">Film</h1>
+    </div>
+    <div class="divid">
+        <a id="ttt" href="{{ path('app_event_type', {'type': 'Food'}) }}"> <img style="height: 200px; border-radius:50%;" class="imgsort" src="/picture/food.png" alt=""></a>
+        <h1 class="ttxt">Food</h1>
+    </div>
+    <div class="divid">
+        <a id="ttt" href="{{ path('app_event_type', {'type': 'Sport'}) }}"> <img style="height: 200px; " class="imgsort" src="/picture/Sport.png" alt=""></a>
+        <h1 class="ttxt">Sport</h1>
+    </div>
+    <div class="divid">
+        <a id="ttt" href="{{ path('app_event_type', {'type': 'Theater'}) }}"> <img style="height: 200px; border-radius:50%;" class="imgsort" src="/picture/theater.png" alt=""></a>
+        <h1 class="ttxt">Theater</h1>
+    </div>
+</div> 
+</div>
+
+
+<!--- here are the cards that are created -->
+
+<div class="container ">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 gap-5 mx-4 mb-5">
+        {% for event in events %}
+        <div class="card  box1" style="width: 20rem;"><br>
+            <img src="{{ event.picture }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 style="font-size: 40px;" class="card-title"><u>{{ event.name }}</u></h5><hr>
+                <p class="card-text">Place : <br>{{ event.address }} </p>
+                <p class="card-text"><mark>Type :</mark> <br><mark>{{ event.type }}</mark> </p><hr>
+                <p class="card-text">Date : <br>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }} .</p><hr>
+            </div>
+            <div style="display: flex;">
+                <a class="box" href="{{ path('app_event_show', {'id': event.id}) }}">Show</a>
+                <a class="box" href="{{ path('app_event_edit', {'id': event.id}) }}">Edit</a>
+                <br>
+            </div>
+            <br>
+        </div>
+        {% else %}
+        <div class="container">
+            No records found
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- here is the Footer-->
+
+
+<div class="footer">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 footer-in1">
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icon-fb.png.png" alt=""></a>
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icon-git.png.png" alt=""></a>
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icon-ig.png.png" alt=""></a>
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icons-youtube.png.png" alt=""></a>
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icons-in.png.png" alt=""></a>
+        <a class="footer-mini-icon" href="https://codefactory.wien/de/"> <img src="/picture/icons-twitter.png.png" alt=""></a>
+      
+    </div>
+
+    <div>
+       
+        <iframe class="mapp ;" style="border-radius:30px ;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d340261.6277621887!2d16.050423492117257!3d48.2202137704578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079e5136ca9f%3A0xfdc2e58a51a25b46!2sVienna!5e0!3m2!1sen!2sat!4v1691767523604!5m2!1sen!2sat" 
+            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div>
+                <p style="margin-left: 50px;">Original #CodeFactory 2023 CodeReview6 <u>Gazmend Aliu</u></p>
+            </div>
+    </div>
+  
+</div>
+
+
+{% endblock %}
+
+{# <p>Copyright #CodeFactory 2023 - Gazmend Aliu</p> #}

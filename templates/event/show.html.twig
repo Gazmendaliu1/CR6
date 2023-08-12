@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <h1>Event Details</h1>
+    </div>
+    
+
+            <div class="container mb-5">
+                <div class="card mb-5" style="width: 40rem; ">
+                    
+                    <img src="{{ event.picture }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                            <h5 style="font-size: 40px;" class="card-title">{{ event.name }}</h5>
+                                <p class="card-text">Place : <br><u>{{ event.address }}</u></p>
+                                <p class="card-text">Contact Email : <br> <u>{{ event.email }}</u></p>
+                                <p class="card-text">Contact Phone : <br> <u>{{ event.phonecontact }}</u></p><hr>
+                                <p style="background-color: rgb(247, 247, 239);" class="card-text"> Click URL: <br><a href="{{ event.url }}" target="_blank">{{ event.url }}</a></p><hr>
+
+                               
+                                <p class="card-text">Description : <br> {{ event.description }}</p><hr>
+                                <p class="card-text">Capacity : <br> {{ event.capacity }}</p><hr>
+                                <p class="card-text">Date : <br>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</p>
+                                <p class="card-text">Type: <u style="font-weight: bold;">{{ event.type }}</u></p><hr>
+                        </div>
+                    <div class="mx-4 mb-5" style="display: flex; justify-content: space-around;">
+                        <a class="box" href="{{ path('app_event_index') }}">back to list</a>
+                        <a  class="box" href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+                        {{ include('event/_delete_form.html.twig') }}
+                            <br>
+                    </div>
+                </div>
+
+
+
+   
+{% endblock %}

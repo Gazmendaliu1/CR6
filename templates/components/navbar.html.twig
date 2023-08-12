@@ -1,0 +1,26 @@
+<nav  class="navbar navbar-expand-lg bg-body-tertiary  gap-5">
+    <div class="container-fluid " >
+      <div>
+        <img class="gx" style="height:30px;" src="/picture/gx.jpg" alt="">
+      </div>
+      <a style="font-family:'Times New Roman', Times, serif ;" class="navbar-brand " href="{{ path('app_event_index') }}">Events Austria</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse  bar1" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div>
+            <li class="nav-item">
+              <a style="text-shadow: 0 0 15px;" class="nav-link active  " aria-current="page" href="{{ path('app_event_index') }}">Home</a>
+            </li>
+          </div>
+          <div>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ path('app_event_new') }}">Create Event</a>
+            </li>
+          </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
