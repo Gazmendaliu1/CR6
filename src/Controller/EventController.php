@@ -23,7 +23,7 @@ class EventController extends AbstractController
             'events' => $eventRepository->findAll(),
         ]);
     }
-
+//
     #[Route('/new', name: 'app_event_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -43,7 +43,7 @@ class EventController extends AbstractController
             'form' => $form,
         ]);
     }
-
+//
     #[Route('/{id}', name: 'app_event_show', methods: ['GET'])]
     public function show(Event $event): Response
     {
@@ -51,7 +51,7 @@ class EventController extends AbstractController
             'event' => $event,
         ]);
     }
-
+//
     #[Route('/{id}/edit', name: 'app_event_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Event $event, EntityManagerInterface $entityManager): Response
     {
@@ -69,7 +69,7 @@ class EventController extends AbstractController
             'form' => $form,
         ]);
     }
-
+//
     #[Route('/{id}', name: 'app_event_delete', methods: ['POST'])]
     public function delete(Request $request, Event $event, EntityManagerInterface $entityManager): Response
     {
@@ -80,6 +80,7 @@ class EventController extends AbstractController
 
         return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
     }
+// here is the sortby
     #[Route('/events/type/{type}', name: 'app_event_type', methods: ['GET'])]
     public function eventsByType(EventRepository $eventRepository, string $type): Response
     {
