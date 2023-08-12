@@ -16,6 +16,7 @@
     background: transparent;
     text-transform: uppercase;
     font-weight: 900;
+    
   
     /* box-shadow: 1px 1px 1px; */
     
@@ -35,6 +36,7 @@
     border-left: 4px solid transparent;
     box-sizing: border-box;
     transform: translateX(100%);
+    
   }
   
   .box:after {
@@ -52,6 +54,7 @@
   
   .box:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    
   }
   
   .box:hover:before {
@@ -76,10 +79,12 @@
     outline: none;
     border: none;
     background: transparent;
+    
   }   
 
   .box1 {
     box-shadow: 0 0 15px;
+    
 
   }
    .event{
